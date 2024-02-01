@@ -1,0 +1,25 @@
+{
+  "name": "@newlogic-digital/cookie-consent",
+  "version": "1.0.0-next.1",
+  "type": "module",
+  "main": "index.js",
+  "author": "New Logic Studio s.r.o.",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint 'src/scripts/**/*.js'",
+    "eslint-fix": "eslint 'src/scripts/**/*.js' --fix"
+  },
+  "devDependencies": {
+    "eslint-config-standard": "^17.1.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "engines": {
+    "node": "^18.0.0 || >=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newlogic-digital/cookie-consent.git"
+  }
+}
