@@ -1,13 +1,13 @@
 {
-  "name": "@newlogic-digital/cookie-consent",
+  "name": "@newlogic-digital/cookieconsent",
   "version": "1.0.0-next.1",
   "type": "module",
   "main": "index.js",
   "author": "New Logic Studio s.r.o.",
   "license": "MIT",
   "scripts": {
-    "eslint": "eslint 'src/scripts/**/*.js'",
-    "eslint-fix": "eslint 'src/scripts/**/*.js' --fix"
+    "eslint": "eslint '**/*.js'",
+    "eslint-fix": "eslint '**/*.js' --fix"
   },
   "devDependencies": {
     "eslint-config-standard": "^17.1.0"
