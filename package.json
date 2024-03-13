@@ -1,6 +1,6 @@
 {
-  "name": "@newlogic-digital/cookieconsent",
-  "version": "1.0.0-next.1",
+  "name": "@newlogic-digital/cookieconsent-js",
+  "version": "0.0.2",
   "type": "module",
   "main": "index.js",
   "author": "New Logic Studio s.r.o.",
@@ -15,6 +15,9 @@
   "files": [
     "index.js"
   ],
+  "exports": {
+    ".": "./index.js"
+  },
   "engines": {
     "node": "^18.0.0 || >=20.0.0"
   },
