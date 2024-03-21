@@ -1,6 +1,6 @@
 export const appendCookieConsent = (element, options = {}) => {
     options = {
-        ignoreAttributeName: '',
+        ignoreAttributeName: /(type)/,
         delay: 0,
         ...options
     }
@@ -8,7 +8,7 @@ export const appendCookieConsent = (element, options = {}) => {
     const script = document.createElement('script')
 
     ;[...element.attributes].forEach(({ specified, name, value }) => {
-        if (specified && name.includes(options.ignoreAttributeName) && name.includes('type')) {
+        if (specified && !name.match(options.ignoreAttributeName)) {
             script.setAttribute(name, value)
         }
     })
@@ -30,10 +30,10 @@ export const unsetCookieConsent = () => {
 
 export const setCookieConsent = (type, options) => {
     options = {
-        name: 'lib-cookieconsent',
+        name: 'cookieconsent-js',
         expire: 31556926 * 1000,
         setItem: (key, value) => localStorage.setItem(key, value),
-        getItem: (key, value) => localStorage.getItem(key),
+        getItem: key => localStorage.getItem(key),
         ...options
     }
 
