@@ -1,25 +1,13 @@
+import { replaceScript } from '@newlogic-digital/utils-js'
+
 export const appendCookieConsent = (element, options = {}) => {
     options = {
-        ignoreAttributeName: /(type)/,
+        ignoreAttributeName: /(type|data-lib-cookieconsent)/,
         delay: 0,
         ...options
     }
 
-    const script = document.createElement('script')
-
-    ;[...element.attributes].forEach(({ specified, name, value }) => {
-        if (specified && !name.match(options.ignoreAttributeName)) {
-            script.setAttribute(name, value)
-        }
-    })
-
-    script.innerHTML = element.innerHTML
-
-    setTimeout(() => {
-        (element.closest('head') ? document.head : document.body).appendChild(script)
-
-        element.remove()
-    }, options.delay)
+    setTimeout(() => replaceScript(element, options.ignoreAttributeName), options.delay)
 }
 
 export const unsetCookieConsent = () => {

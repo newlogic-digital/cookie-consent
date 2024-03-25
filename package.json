@@ -1,6 +1,6 @@
 {
   "name": "@newlogic-digital/cookieconsent-js",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "type": "module",
   "main": "index.js",
   "author": "New Logic Studio s.r.o.",
@@ -8,6 +8,9 @@
   "scripts": {
     "eslint": "eslint '**/*.js'",
     "eslint-fix": "eslint '**/*.js' --fix"
+  },
+  "dependencies": {
+    "@newlogic-digital/utils-js": "^0.1.0"
   },
   "devDependencies": {
     "eslint-config-standard": "^17.1.0"
