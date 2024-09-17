@@ -2,12 +2,20 @@ import { replaceScript } from '@newlogic-digital/utils-js'
 
 export const appendCookieConsent = (element, options = {}) => {
     options = {
-        ignoreAttributeName: /(type|data-lib-cookieconsent)/,
+        ignoreAttributeName: /(type|data-cookieconsent)/,
         delay: 0,
         ...options
     }
 
     setTimeout(() => replaceScript(element, options.ignoreAttributeName), options.delay)
+}
+
+export const initCookieConsent = (element = document, type = localStorage.getItem('cookieconsent-js') ?? [], attribute = 'data-cookieconsent') => {
+    element.querySelectorAll(`[${attribute}]`).forEach((element) => {
+        if (type.includes(element.getAttribute(attribute))) {
+            appendCookieConsent(element)
+        }
+    })
 }
 
 export const unsetCookieConsent = () => {
