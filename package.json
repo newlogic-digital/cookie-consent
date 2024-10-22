@@ -7,13 +7,15 @@
   "license": "MIT",
   "scripts": {
     "eslint": "eslint '**/*.js'",
-    "eslint-fix": "eslint '**/*.js' --fix"
+    "eslint-fix": "eslint '**/*.js' --fix",
+    "publish-next": "npm publish --tag next"
   },
   "dependencies": {
-    "@newlogic-digital/utils-js": "^0.1.0"
+    "@newlogic-digital/utils-js": "^1"
   },
   "devDependencies": {
-    "eslint-config-standard": "^17.1.0"
+    "eslint": "^9.13.0",
+    "neostandard": "^0.11.6"
   },
   "files": [
     "index.js"
@@ -22,7 +24,7 @@
     ".": "./index.js"
   },
   "engines": {
-    "node": "^18.0.0 || >=20.0.0"
+    "node": ">=20.0.0"
   },
   "repository": {
     "type": "git",

@@ -19,7 +19,7 @@ export const initCookieConsent = (element = document, type = localStorage.getIte
 }
 
 export const unsetCookieConsent = () => {
-    document.cookie.split(';').forEach(c => {
+    document.cookie.split(';').forEach((c) => {
         document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/')
     })
 }
@@ -33,7 +33,7 @@ export const setCookieConsent = (type, options) => {
         ...options
     }
 
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
         options.setItem(options.name, JSON.stringify(type))
         options.setItem(`${options.name}-expire`, (Date.now() + options.expire).toString())
 
